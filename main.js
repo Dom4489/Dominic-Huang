@@ -64,15 +64,16 @@ for(let i = 0; i < selectItems.length; i++) {
 const filterItems = document.querySelectorAll('[data-filter-item]');
 
 const filterFunc = function (selectedValue) {
-    for(let i = 0; i < filterItems.length; i++) {
-        if(selectedValue == "all") {
-            filterItems[i].classList.add('active');
-        } else if (selectedValue == filterItems[i].dataset.category) {
-            filterItems[i].classList.add('active');
-        } else {
-            filterItems[i].classList.remove('active');
-        }
-    }
+ for(let i = 0; i < filterItems.length; i++) {
+     const category = filterItems[i].dataset.category.toLowerCase(); // Convert to lowercase
+     if(selectedValue === "all") {
+         filterItems[i].classList.add('active');
+     } else if (selectedValue === category) { // Compare lowercase values
+         filterItems[i].classList.add('active');
+     } else {
+         filterItems[i].classList.remove('active');
+     }
+ }
 }
 
 //Enabling filter button for larger screens 
@@ -130,3 +131,4 @@ for(let i = 0; i < navigationLinks.length; i++) {
         }
     });
 }
+
