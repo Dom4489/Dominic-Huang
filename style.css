@@ -280,7 +280,7 @@ article.active {
 
 /*ASIDE - SIDEBAR*/
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .sidebar {
     display: none;
   }
